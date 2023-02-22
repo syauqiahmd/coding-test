@@ -15,5 +15,4 @@ router.use(authentication)
 router.get('/jobs', jobController.findAll)
 router.get('/jobs/:id', jobController.findOne)
 
-
 module.exports = router

@@ -6,7 +6,6 @@ class jobController{
   static async findAll(req, res, next){
     try {
       const search = []
-
       const {page, description, location, full_time} = req.query
       if(page){
         search.push(`page=${page}`)
@@ -18,10 +17,8 @@ class jobController{
         search.push(`location=${location}`)
       }
       if(full_time){
-        search.push(`full_time=${full_time}`)
+        search.push(`full_time=true`)
       }
-
-      console.log(search.join('&'))
 
       const { data } = await axios({
         method: "get",
